@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+	    <meta name="author" content="mengkun">
+	    <meta name="generator" content="KodCloud">
+	    <meta name="renderer" content="webkit">
+	    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
+	    <meta http-equiv="Cache-Control" content="no-siteapp">
+	    <!-- <meta name="description" content="思仁网页实验室用于陈列一些思仁博客原创作品、收集的一些网页特效，以及其它的好玩的内容"> -->
+	    <!-- <meta name="keywords" content="思仁,思仁网页实验室,思仁实验室,思仁博客"> -->
+		<link rel="stylesheet" type="text/css" href="static/css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="FontAwesome/css/font-awesome.min.css"/>
+		<!-- <title>思仁Web实验室</title> -->
+	</head>
+	<body>
+		<div id="wrapper">
+			<div class="title">
+				<p>— 欢迎访问 —</p>
+				<span>KR的实验室</span>
+				<!-- <img src="static/img/1564887462_926816.png"/> -->
+			</div>
+			<a href="javascript:" id="bot">向下滚动</a>
+		    <canvas id="canvas" width="" height=""></canvas>
+			<canvas id="canvasbg" width="" height=""></canvas>
+		</div>
+		<div class="main">
+			<h3>原创作品</h3>
+			<!--<p>没错，这些都是我的原创作品</p>-->
+			<div class="itme">
+				<div class=""><a target="_blank" href="/game"><i class="light"></i><i class="fa fa-picture-o" aria-hidden="true"></i><h3>WallPaper</h3><p>抽奖系统</p></a></div>
+				<div class=""><a target="_blank" href="/movie"><i class="light"></i><i class="fa fa-user-o" aria-hidden="true"></i><h3>Avatar</h3><p>电影院</p></a></div>
+				<div class=""><a target="_blank" href="notewall/index.html"><i class="light"></i><i class="fa fa-tag" aria-hidden="true"></i><h3>Label Wall</h3><p>标签墙</p></a></div>
+				<div class=""><a target="_blank" href="robot/index.html"><i class="light"></i><i class="fa fa-send-o" aria-hidden="true"></i><h3>Robot</h3><p>在线聊天机器人</p></a></div>
+				<div class=""><a target="_blank" href="Desktop/index.html"><i class="light"></i><i class="fa fa-desktop" aria-hidden="true"></i><h3>Web OS</h3><p>在线桌面</p></a></div>
+				<div class=""><a target="_blank" href="websocket/index.html"><i class="light"></i><i class="fa fa-server" aria-hidden="true"></i><h3>WebSocket</h3><p>即时聊天</p></a></div>
+			</div>
+			<h3>精选作品</h3>
+			<div class="itme">
+				<div class=""><a target="_blank" href="music/index.html"><i class="light"></i><i class="fa fa-music" aria-hidden="true"></i><h3>MKOnlinePlayer</h3><p>基于网易云 API 的音乐播放器</p></a></div>
+				<div class=""><a target="_blank" href="time/index.html"><i class="light"></i><i class="fa fa-clock-o" aria-hidden="true"></i><h3>Time</h3><p>圆形虚线时钟ui特效</p></a></div>
+				<div class=""><a target="_blank" href="BadApple/index.html"><i class="light"></i><i class="fa fa-apple"></i><h3>BadApple</h3><p>苹果好吃吗</p></a></div>
+				<div class=""><a target="_blank" href="3dcartoon/index.html"><i class="light"></i><i class="fa fa-soccer-ball-o"></i><h3>Sphere</h3><p>3D粒子球</p></a></div>
+			</div>
+			<h3>关于</h3>
+			<div class="About">
+				<p>欢迎来到KR Web 实验室，在这里您将可以体验到新鲜、好玩的 Html 作品。这些作品中，有一些是本人原创或改写的， 还有一些是别人的开源大作，但因其很有特色，值得学习玩味，因此也出现在这里。</p>
+			</div>
+		</div>
+		<div id="istop">回顶</div>
+		<script src="static/js/jquery2.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				document.getElementById("canvas").width = $(window).width();
+				document.getElementById("canvasbg").width = $(window).width();
+				document.getElementById("canvas").height = $(window).height();
+				document.getElementById("canvasbg").height = $(window).height();
+				//鼠标光效
+				for ($i=0;$i<$(".itme div").length;$i++) {
+					$(".itme div").eq($i).addClass(color1());
+				}
+				function color1(){
+					var i =Math.floor(Math.random()*5)+1;
+					return "color"+i;
+				}
+				$(window).resize(function(){
+					var width = $(window).width();
+					var height = $(window).height();
+					document.getElementsByTagName("canvas")[0].width = width;
+					document.getElementsByTagName("canvas")[1].width = width;
+					document.getElementsByTagName("canvas")[0].height = height;
+					document.getElementsByTagName("canvas")[1].height = height;
+				});
+				$("#istop").click(function() {
+					$("html,body").animate({scrollTop:0}, 200);
+				});
+				$(window).scroll(function(){
+					var topp = $(document).scrollTop();
+					if(topp > 20){
+						$("header").addClass("head_nav");
+						$("section").addClass("head_nav_bott");
+					}else{
+						$("header").removeClass("head_nav");
+						$("section").removeClass("head_nav_bott");
+					}
+					if(topp > 500){
+						$('#istop').fadeIn();
+					}else{
+						$('#istop').fadeOut();
+					}
+				});
+			});
+			$("#bot").click(function(){
+				$("html,body").animate({scrollTop:$(window).height()}, 500);
+			})
+		</script>
+		
+		<script>
+			$(function(){
+				intio();
+				function intio(){
+				var radMin = 5,
+				radMax = 125,
+				filledCircle = 60,
+				concentricCircle = 30,
+			 	radThreshold = 25;
+				var speedMin = 1,
+			  	speedMax = 2.5;
+				var maxOpacity = 0.6;
+				var colors = ['52,168,83', '117,95,147', '199,108,23', '194,62,55', '0,172,212', '120,120,120'],
+			  	bgColors = ['52,168,83', '117,95,147', '199,108,23', '194,62,55', '0,172,212', '120,120,120'],
+			  	circleBorder = 10,
+			  	backgroundLine = bgColors[0];
+				var backgroundMlt = 0.85;
+				var linkDist = Math.min(canvas.width, canvas.height) / 2.4,
+			  	lineBorder = 2.5;
+				var maxCircles = 12,
+			  	points = [],
+			  	pointsBack = [];
+				for (var i = 0; i < maxCircles * 2; i++) points.push(new Circle());
+				for (var i = 0; i < maxCircles; i++) pointsBack.push(new Circle(true));
+				var circleExp = 1,
+			  	circleExpMax = 1.003,
+			  	circleExpMin = 0.997,
+			  	circleExpSp = 0.00004,
+			  	circlePulse = false;
+				function Circle(background) {
+				  	this.background = (background || false);
+				  	this.x = randRange(-canvas.width / 2, canvas.width / 2);
+				  	this.y = randRange(-canvas.height / 2, canvas.height / 2);
+				  	this.radius = background ? hyperRange(radMin, radMax) * backgroundMlt : hyperRange(radMin, radMax);
+				  	this.filled = this.radius < radThreshold ? (randint(0, 100) > filledCircle ? false : 'full') : (randint(0, 100) > concentricCircle ? false : 'concentric');
+				  	this.color = background ? bgColors[randint(0, bgColors.length - 1)] : colors[randint(0, colors.length - 1)];
+				  	this.borderColor = background ? bgColors[randint(0, bgColors.length - 1)] : colors[randint(0, colors.length - 1)];
+				  	this.opacity = 0.05;
+				  	this.speed = (background ? randRange(speedMin, speedMax) / backgroundMlt : randRange(speedMin, speedMax));
+				  	this.speedAngle = Math.random() * 2 * Math.PI;
+				  	this.speedx = Math.cos(this.speedAngle) * this.speed;
+				  	this.speedy = Math.sin(this.speedAngle) * this.speed;
+				  	var spacex = Math.abs((this.x - (this.speedx < 0 ? -1 : 1) * (canvas.width / 2 + this.radius)) / this.speedx),
+				    spacey = Math.abs((this.y - (this.speedy < 0 ? -1 : 1) * (canvas.height / 2 + this.radius)) / this.speedy);
+				  	this.ttl = Math.min(spacex, spacey);
+				};
+				Circle.prototype.init = function() {
+			  		Circle.call(this, this.background);
+				}
+				function randint(a, b) {
+			    	return Math.floor(Math.random() * (b - a + 1) + a);
+			  	}
+				function randRange(a, b) {
+			    	return Math.random() * (b - a) + a;
+			  	}
+				function hyperRange(a, b) {
+			  		return Math.random() * Math.random() * Math.random() * (b - a) + a;
+				}
+				function drawCircle(ctx, circle) {
+			  		var radius = circle.background ? circle.radius *= circleExp : circle.radius /= circleExp;
+			  		ctx.beginPath();
+			  		ctx.arc(circle.x, circle.y, radius * circleExp, 0, 2 * Math.PI, false);
+			  		ctx.lineWidth = Math.max(1, circleBorder * (radMin - circle.radius) / (radMin - radMax));
+			  		ctx.strokeStyle = ['rgba(', circle.borderColor, ',', circle.opacity, ')'].join('');
+			  		if (circle.filled == 'full') {
+			    		ctx.fillStyle = ['rgba(', circle.borderColor, ',', circle.background ? circle.opacity * 0.8 : circle.opacity, ')'].join('');
+			    		ctx.fill();
+			    		ctx.lineWidth=0;
+			    		ctx.strokeStyle = ['rgba(', circle.borderColor, ',', 0, ')'].join('');
+			  		}
+			  		ctx.stroke();
+			  		if (circle.filled == 'concentric') {
+			    		ctx.beginPath();
+			    		ctx.arc(circle.x, circle.y, radius / 2, 0, 2 * Math.PI, false);
+			    		ctx.lineWidth = Math.max(1, circleBorder * (radMin - circle.radius) / (radMin - radMax));
+			    		ctx.strokeStyle = ['rgba(', circle.color, ',', circle.opacity, ')'].join('');
+			    		ctx.stroke();
+			  		}
+			  		circle.x += circle.speedx;
+			  		circle.y += circle.speedy;
+			  		if (circle.opacity < (circle.background ? maxOpacity : 1)) circle.opacity += 0.01;
+			  			circle.ttl--;
+			}
+			function init() {
+			  window.requestAnimationFrame(draw);
+			}
+			
+			function draw() {
+			
+			  if (circlePulse) {
+			    if (circleExp < circleExpMin || circleExp > circleExpMax) circleExpSp *= -1;
+			    circleExp += circleExpSp;
+			  }
+			  var ctxfr = document.getElementById('canvas').getContext('2d');
+			  var ctxbg = document.getElementById('canvasbg').getContext('2d');
+			
+			  ctxfr.globalCompositeOperation = 'destination-over';
+			  ctxfr.clearRect(0, 0, canvas.width, canvas.height); 
+			  ctxbg.globalCompositeOperation = 'destination-over';
+			  ctxbg.clearRect(0, 0, canvas.width, canvas.height);
+			
+			  ctxfr.save();
+			  ctxfr.translate(canvas.width / 2, canvas.height / 2);
+			  ctxbg.save();
+			  ctxbg.translate(canvas.width / 2, canvas.height / 2);
+			
+			  function renderPoints(ctx, arr) {
+			    for (var i = 0; i < arr.length; i++) {
+			      var circle = arr[i];
+			      if (circle.ttl<0) {}
+			      var xEscape = canvas.width / 2 + circle.radius,
+			        yEscape = canvas.height / 2 + circle.radius;
+			      if (circle.ttl < -20) arr[i].init(arr[i].background);
+			      drawCircle(ctx, circle);
+			    }
+			    for (var i = 0; i < arr.length - 1; i++) {
+			      for (var j = i + 1; j < arr.length; j++) {
+			        var deltax = arr[i].x - arr[j].x;
+			        var deltay = arr[i].y - arr[j].y;
+			        var dist = Math.pow(Math.pow(deltax, 2) + Math.pow(deltay, 2), 0.5);
+			        if (dist <= arr[i].radius + arr[j].radius) continue;
+			        if (dist < linkDist) {
+			          var xi = (arr[i].x < arr[j].x ? 1 : -1) * Math.abs(arr[i].radius * deltax / dist);
+			          var yi = (arr[i].y < arr[j].y ? 1 : -1) * Math.abs(arr[i].radius * deltay / dist);
+			          var xj = (arr[i].x < arr[j].x ? -1 : 1) * Math.abs(arr[j].radius * deltax / dist);
+			          var yj = (arr[i].y < arr[j].y ? -1 : 1) * Math.abs(arr[j].radius * deltay / dist);
+			          ctx.beginPath();
+			          ctx.moveTo(arr[i].x + xi, arr[i].y + yi);
+			          ctx.lineTo(arr[j].x + xj, arr[j].y + yj);
+			          var samecolor = arr[i].color == arr[j].color;
+			          ctx.strokeStyle = ["rgba(", arr[i].borderColor, ",", Math.min(arr[i].opacity, arr[j].opacity) * ((linkDist - dist) / linkDist), ")"].join("");
+			          ctx.lineWidth = (arr[i].background ? lineBorder * backgroundMlt : lineBorder) * ((linkDist - dist) / linkDist);
+			          ctx.stroke();
+			        }
+			      }
+			    }
+			  }
+			  var startTime = Date.now();
+			  renderPoints(ctxfr, points);
+			  renderPoints(ctxbg, pointsBack);
+			  deltaT = Date.now() - startTime;
+			  ctxfr.restore();
+			  ctxbg.restore();
+			  window.requestAnimationFrame(draw);
+			}
+			init();
+			}
+		})
+		</script>
+
+	</body>
+</html>

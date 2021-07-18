@@ -4,31 +4,7 @@
     <div class="isTop" v-show="isTop" @click="backTop(step)">
       <i class="el-icon-top"></i>
     </div>
-    <nav>
-      <div class="navBar">
-        <div class="logo">
-          <img src="../../src/assets/logo.png" alt="" />
-          <img src="../../src/assets/logo.png" alt="" />
-          <img src="../../src/assets/logo.png" alt="" />
-        </div>
-        <div class="navBar-title">
-          <div><i class="el-icon-s-home"></i>主页</div>
-          <div><i class="el-icon-reading"></i>技术文章</div>
-          <div class="classify">
-            <i class="el-icon-s-unfold"></i>
-            栏目分类
-            <div class="menu">
-              <div>资源分享</div>
-              <div>资源分享</div>
-              <div>资源分享</div>
-            </div>
-          </div>
-          <div><i class="el-icon-loading"></i>实验室</div>
-          <div><i class="el-icon-chat-round"></i>给我留言</div>
-          <div><i class="el-icon-info"></i>关于</div>
-        </div>
-      </div>
-    </nav>
+    <NavBar/>
     <div class="main_center">
       <div class="left">
         <div
@@ -64,7 +40,7 @@
           />
         </div>
         <div class="center-content">
-          <div class="hearder">
+          <div class="hearder" @click="toMy()">
             <img
               src="https://img.tgl.qq.com/cover/20210716/1d0812ff299e07eaaa61b9b25c75c550_1626394876.jpg"
               alt=""
@@ -78,15 +54,15 @@
           </div>
           <div class="add-friend">
             <div class="wx">
-              <img class="iconB" src="../assets/wxBackground.jpg" alt="" />
+              <img class="iconB" src="@/assets/wxBackground.jpg" alt="" />
               <div class="erweima">
-                <img src="../assets/wx.png" alt="" />
+                <img src="@/assets/wx.png" alt="" />
               </div>
             </div>
             <div class="qq">
-              <img class="iconB" src="../assets/qqBackground.jpg" alt="" />
+              <img class="iconB" src="@/assets/qqBackground.jpg" alt="" />
               <div class="erweima">
-                <img src="../assets/qq.png" alt="" />
+                <img src="@/assets/qq.png" alt="" />
               </div>
             </div>
           </div>
@@ -144,7 +120,9 @@
               </div>
             </div>
             <div class="info_message" :class="index == 2 ? 'last' : ''">
-               <i class="el-icon-view"></i>243浏览 |  <i class="el-icon-chat-square"></i>5评论 |  <i class="el-icon-date"></i>2021年01月09日
+              <i class="el-icon-view"></i>243浏览 |
+              <i class="el-icon-chat-square"></i>5评论 |
+              <i class="el-icon-date"></i>2021年01月09日
             </div>
           </div>
         </div>
@@ -171,7 +149,9 @@
               </div>
             </div>
             <div class="info_message" :class="index == 2 ? 'last' : ''">
-              <i class="el-icon-view"></i>243浏览 |  <i class="el-icon-chat-square"></i>5评论 |  <i class="el-icon-date"></i>2021年01月09日
+              <i class="el-icon-view"></i>243浏览 |
+              <i class="el-icon-chat-square"></i>5评论 |
+              <i class="el-icon-date"></i>2021年01月09日
             </div>
           </div>
         </div>
@@ -198,7 +178,9 @@
               </div>
             </div>
             <div class="info_message" :class="index == 2 ? 'last' : ''">
-              <i class="el-icon-view"></i>243浏览 |  <i class="el-icon-chat-square"></i>5评论 |  <i class="el-icon-date"></i>2021年01月09日
+              <i class="el-icon-view"></i>243浏览 |
+              <i class="el-icon-chat-square"></i>5评论 |
+              <i class="el-icon-date"></i>2021年01月09日
             </div>
           </div>
         </div>
@@ -237,7 +219,7 @@
           </div>
         </div>
         <div class="hot_soft">
-          <div class="nav"><i class="el-icon-document"></i> 热门软件</div>
+          <div class="nav"><i class="el-icon-connection"></i> 热门软件</div>
           <div class="soft_content">
             <div
               class="soft_item"
@@ -263,12 +245,34 @@
         </div>
       </div>
     </div>
+    <footer>
+      <p class="foot_nav">
+        <a href="">关于我们</a>|<a href="/" rel="nofollow">订阅本站</a> |
+        <a href="" rel="nofollow">联系站长</a>
+        |<a href="" target="_blank">网址地图</a>|<a href="">友情链接</a>
+      </p>
+      <p>
+        Copyright © 2019-2021
+        <a href="">KR博客</a>
+        版权所有 | 托管于
+        <a href="" target="_blank"><img src="" />阿里云服务器 </a>
+      </p>
+      <p>
+        <span id="cnzz_stat_icon_1278873985"></span>
+      </p>
+      <p>
+        <a href="" target="_blank"><img src="" />来自KR的博客</a>
+      </p>
+    </footer>
   </div>
 </template>
 
 <script>
+import NavBar from "@/components/navBar"
 export default {
-  components: {},
+  components: {
+    NavBar
+  },
   data() {
     return {
       isTop: false,
@@ -278,7 +282,7 @@ export default {
       bannerList: [
         "https://ossweb-img.qq.com/upload/adw/image/977/20210715/383272d4b61efe26fc833e63540fefe1.jpeg",
         "https://ossweb-img.qq.com/upload/adw/image/977/20210714/08edcd6af8a8d4c0a10f1d03830e6fa4.jpeg",
-         "https://ossweb-img.qq.com/upload/adw/image/977/20210715/383272d4b61efe26fc833e63540fefe1.jpeg",
+        "https://ossweb-img.qq.com/upload/adw/image/977/20210715/383272d4b61efe26fc833e63540fefe1.jpeg",
         "https://ossweb-img.qq.com/upload/adw/image/977/20210714/08edcd6af8a8d4c0a10f1d03830e6fa4.jpeg",
       ],
       leftImgList: [
@@ -308,45 +312,50 @@ export default {
         "FTP",
         "H5",
       ],
-      softList:[
+      softList: [
         {
-          title:"阿萨德速度防辐射的",
-          content:"收到非官方的空间冬季风光肯定是军阀割据的是镂空发光角度来看离开对方感觉了可见多发公斤离开对方进攻"
+          title: "阿萨德速度防辐射的",
+          content:
+            "收到非官方的空间冬季风光肯定是军阀割据的是镂空发光角度来看离开对方感觉了可见多发公斤离开对方进攻",
         },
         {
-          title:"阿萨德速度防辐射的",
-          content:"收到非官方的空间冬季风光肯定是军阀割据的是镂空发光角度来看离开对方感觉了可见多发公斤离开对方进攻"
+          title: "阿萨德速度防辐射的",
+          content:
+            "收到非官方的空间冬季风光肯定是军阀割据的是镂空发光角度来看离开对方感觉了可见多发公斤离开对方进攻",
         },
         {
-          title:"阿萨德速度防辐射的",
-          content:"收到非官方的空间冬季风光肯定是军阀割据的是镂空发光角度来看离开对方感觉了可见多发公斤离开对方进攻"
+          title: "阿萨德速度防辐射的",
+          content:
+            "收到非官方的空间冬季风光肯定是军阀割据的是镂空发光角度来看离开对方感觉了可见多发公斤离开对方进攻",
         },
         {
-          title:"阿萨德速度防辐射的",
-          content:"收到非官方的空间冬季风光肯定是军阀割据的是镂空发光角度来看离开对方感觉了可见多发公斤离开对方进攻"
+          title: "阿萨德速度防辐射的",
+          content:
+            "收到非官方的空间冬季风光肯定是军阀割据的是镂空发光角度来看离开对方感觉了可见多发公斤离开对方进攻",
         },
         {
-          title:"阿萨德速度防辐射的",
-          content:"收到非官方的空间冬季风光肯定是军阀割据的是镂空发光角度来看离开对方感觉了可见多发公斤离开对方进攻"
+          title: "阿萨德速度防辐射的",
+          content:
+            "收到非官方的空间冬季风光肯定是军阀割据的是镂空发光角度来看离开对方感觉了可见多发公斤离开对方进攻",
         },
       ],
-      hot_article:[
+      hot_article: [
         "风格化水电费水电费水电费水电费",
         "水电费水电费水电费水电费费价格和环境电费水电费",
         "水电费水电费水电费水电费水电费",
         "水电费风格化电费水电水电费",
         "风格化费的发挥法官水水电费水电费水电费",
-         "风格化水电费水电费水电费水电费",
+        "风格化水电费水电费水电费水电费",
         "水电费水电费水电费水电费费价格和环境电费水电费",
         "水电费水电费水电费水电费水电费",
         "水电费风格化电费水电水电费",
         "风格化费的发挥法官水水电费水电费水电费",
-         "风格化水电费水电费水电费水电费",
+        "风格化水电费水电费水电费水电费",
         "水电费水电费水电费水电费费价格和环境电费水电费",
         "水电费水电费水电费水电费水电费",
         "水电费风格化电费水电水电费",
         "风格化费的发挥法官水水电费水电费水电费",
-      ]
+      ],
     };
   },
   computed: {},
@@ -383,11 +392,29 @@ export default {
         clearTimeout(c);
       }
     },
+    toMy() {
+      this.$router.push({
+        path:"/my"
+      })
+    }
   },
 };
 </script>
 <style lang='scss' scoped>
+@keyframes start {
+  from {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
 .body {
+  // transform: scale(1.5);
+  // transition: all 2s;
   width: 100%;
   height: 100%;
   .isTop {
@@ -403,85 +430,17 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 15px;
-    background: rgba(177, 173, 173, 0.5);
+    border-radius: 50px;
+    background: rgb(252, 252, 252);
     i {
       // margin-right: 1px;
     }
   }
-  nav {
-    background-color: #fff;
-    width: 100%;
-    border-bottom: 0.1px solid rgb(223, 223, 223);
-    position: fixed;
-    top: 0;
-    z-index: 999;
-    .navBar {
-      margin: 0 auto;
-      height: 80px;
-      width: 1800px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      .logo {
-        img {
-          width: 60px;
-          height: 60px;
-          line-height: 60px;
-          // background-color: rgb(187, 167, 167);
-        }
-      }
-      .navBar-title {
-        display: flex;
-        width: 800px;
-        justify-content: space-between;
-        align-items: center;
-        height: 100%;
-        // overflow: hidden;
-        .classify:hover .menu {
-          opacity: 1;
-          display: flex;
-        }
-        .menu {
-          display: none;
-          position: absolute;
-          z-index: 999;
-          width: 100px;
-          height: 100px;
-          background-color: rgb(241, 241, 241);
-          border: rgb(187, 181, 181) solid 1px;
-          border-radius: 10px;
-          flex-direction: column;
-          justify-content: space-around;
-          padding: 5px;
-          opacity: 0;
-        }
-        > div {
-          font-size: 1em;
-          color: #444444;
-          text-align: center;
-          width: 100px;
-          height: 80px;
-          // line-height: 80px;
-          i {
-            line-height: 80px;
-            margin-right: 10px;
-          }
-        }
-        & :hover {
-          color: #4586e7;
-          cursor: pointer;
-
-          // display: block;
-        }
-      }
-    }
-  }
   .main_center {
+    animation: start 1s;
     margin: 100px auto 20px;
     display: flex;
-    width: 1800px;
+    width: 1700px;
     justify-content: space-around;
     // background-color: red;
     .left {
@@ -759,10 +718,11 @@ export default {
     }
   }
   .bottom_content {
+    animation: start 1s;
     letter-spacing: 1px;
     // background-color: red;
     margin: 0 auto;
-    width: 1800px;
+    width: 1700px;
     height: 100%;
     display: flex;
     .left_content {
@@ -859,9 +819,8 @@ export default {
           display: flex;
           justify-content: flex-end;
           border-bottom: 1px dashed #cccccc;
-          i{
+          i {
             margin: 3px 5px 0px 7px;
-
           }
         }
         .last {
@@ -876,6 +835,7 @@ export default {
       }
     }
     .right_content {
+      //  animation: start 1s;
       width: 300px;
       // background-color: #fff;
       height: 100%;
@@ -1047,6 +1007,53 @@ export default {
         }
       }
     }
+  }
+  /*标签*/
+  footer {
+    width: 100%;
+    min-width: 250px;
+    line-height: 30px;
+    padding: 10px 0;
+    color: #000;
+    margin: 20px 0px auto;
+    font-size: 12px;
+    text-align: center;
+    background: #fff;
+    transition: all 0.5s;
+  }
+  footer .foot_nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  footer .foot_nav a {
+    font-weight: bold;
+    font-size: 13px;
+    padding: 0 7px;
+  }
+  footer a:nth-child(1) img {
+    position: relative;
+    bottom: -5px;
+    margin-right: 3px;
+  }
+  footer a:nth-child(2) img {
+    position: relative;
+    bottom: -1px;
+    margin-right: 3px;
+  }
+  footer a:nth-child(3) img {
+    height: 16px;
+    position: relative;
+    bottom: -2px;
+    margin-right: 3px;
+  }
+  footer a {
+    color: #555555;
+    text-decoration: none;
+  }
+  footer a:hover {
+    text-decoration: underline;
+    color: #4586e7;
   }
 }
 </style>
