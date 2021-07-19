@@ -6,6 +6,8 @@ import Loading from '../views/Loading/Loading.vue'
 import Lavoratory from '../views/Lavoratory/Lavoratory.vue'
 import Game from '../views/Game/Game.vue'
 import Movie from '../views/Movie/Movie.vue'
+import Planet from '../views/Planet/Planet.vue'
+import SkillArticle from '../views/SkillArticle/SkillArticle.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -29,17 +31,27 @@ const routes = [
     name: 'Lavoratory',
     component: Lavoratory
   },
+  // {
+  //   path: '/game',
+  //   name: 'Game',
+  //   component: Game
+  // },
+  // {
+  //   path: '/movie',
+  //   name: 'Movie',
+  //   component: Movie
+  // },
+  // {
+  //   path: '/planet',
+  //   name: 'Planet',
+  //   component: Planet
+  // },
   {
-    path: '/game',
-    name: 'Game',
-    component: Game
+    path: '/skillarticle',
+    name: 'SkillArticle',
+    component: SkillArticle
   },
-  {
-    path: '/movie',
-    name: 'Movie',
-    component: Movie
-  },
-  
+
   // {
   //   path: '/about',
   //   name: 'About',
@@ -51,7 +63,7 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  mode:'history',
+  mode: 'history',
   routes
 })
 

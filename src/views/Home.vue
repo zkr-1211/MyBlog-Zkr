@@ -1,17 +1,39 @@
 <!--  -->
 <template>
   <div class="body">
+    <!-- <section class="container">
+    <ul>
+        <li class="wow bounceInLeft">啊啊啊</li>
+        <li class="wow bounceInRight"></li>
+        <li class="wow bounceIn"></li>
+        <li class="wow bounceInUp"></li>
+        <li class="wow bounceInDown"></li>
+        <li class="wow slideInUp"></li>
+        <li class="wow slideInDown"></li>
+        <li class="wow slideInLeft"></li>
+        <li class="wow slideInRight"></li>
+        <li class="wow lightSpeedIn"></li>
+        <li class="wow pulse"></li>
+        <li class="wow flipInX">哦哦哦</li>
+        <li class="wow flipInY"></li>
+        <li class="wow bounce"></li>
+        <li class="wow shake"></li>
+        <li class="wow wobble"></li>
+        <li class="wow rollIn"></li>
+        <li class="wow fadeInUpBig" data-wow-delay="0.3s"></li>
+        <li class="wow fadeInUpBig" data-wow-delay="0.6s">呃呃呃</li>
+        <li class="wow fadeInUpBig" data-wow-delay="0.9s"></li>
+        <li class="wow fadeInUpBig" data-wow-delay="1.2s"></li>
+        <li class="wow fadeInUpBig" data-wow-delay="1.5s"></li>
+    </ul>
+</section> -->
     <div class="isTop" v-show="isTop" @click="backTop(step)">
       <i class="el-icon-top"></i>
     </div>
-    <NavBar/>
-    <div class="main_center">
+    <NavBar />
+    <div class="main_center wow bounceInLeft">
       <div class="left">
-        <div
-          class="left_item1"
-          v-for="(item, index) in leftImgList"
-          :key="index"
-        >
+        <div class="left_item1" v-for="(item, index) in leftImgList" :key="index">
           <div class="item">
             <div class="text">
               <h1>标题名称</h1>
@@ -32,246 +54,47 @@
           </el-carousel-item>
         </el-carousel>
       </div>
-      <div class="right">
-        <div class="top-img">
-          <img
-            src="https://img.tgl.qq.com/cover/20210714/d7d2983f3e14b574a4bf28bc309b52ef_1626264996.jpg"
-            alt=""
-          />
-        </div>
-        <div class="center-content">
-          <div class="hearder" @click="toMy()">
-            <img
-              src="https://img.tgl.qq.com/cover/20210716/1d0812ff299e07eaaa61b9b25c75c550_1626394876.jpg"
-              alt=""
-            />
-          </div>
-          <div>
-            <h2>KR博客</h2>
-          </div>
-          <div class="detail">
-            张克榕的博客是致力于解决web前端开发中的实际问题的个人博客（zkrblog.top）
-          </div>
-          <div class="add-friend">
-            <div class="wx">
-              <img class="iconB" src="@/assets/wxBackground.jpg" alt="" />
-              <div class="erweima">
-                <img src="@/assets/wx.png" alt="" />
-              </div>
-            </div>
-            <div class="qq">
-              <img class="iconB" src="@/assets/qqBackground.jpg" alt="" />
-              <div class="erweima">
-                <img src="@/assets/qq.png" alt="" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="message-content">
-          <div>
-            <div class="num">3104</div>
-            <div>
-              <h4>浏览</h4>
-            </div>
-          </div>
-          <div>
-            <div class="num">64</div>
-            <div>
-              <h4>留言+评论</h4>
-            </div>
-          </div>
-          <div class="run">
-            <div class="num">669</div>
-            <div>
-              <h4>运行</h4>
-            </div>
-          </div>
-        </div>
+      <div>
+        <PersonCard />
       </div>
+
     </div>
     <div class="bottom_content">
       <div class="left_content">
-        <div class="new_content">
-          <div class="nav">
-            <div>最新内容</div>
-          </div>
-          <div v-for="(item, index) in 3" :key="index">
-            <div class="content">
-              <div class="img">
-                <img
-                  src="https://img.tgl.qq.com/cover/20210716/1d0812ff299e07eaaa61b9b25c75c550_1626394876.jpg"
-                  alt=""
-                />
-              </div>
-              <div class="main_contnet">
-                <div class="title">
-                  <a href="">水电费水器目前市面上上有很</a>
-                </div>
-                <div class="detail">
-                  有时候工作需要或者娱乐需要，会经常在电脑上使用安卓模拟器。目前市面上有很多款安装模拟器，像分享者比较常用的有两款：逍遥游和雷电；这两款都比较稳定，也比较适合我的使用习惯。今天给大家分享一下其中一款，雷电模拟器的无广告纯净版，搭载Android
-                  7.1内核，启动速度快，稳定流畅兼容性好。
-                  有时候工作需要或者娱乐需要，会经常在电脑上使用安卓模拟器。目前市面上有很多款安装模拟器，像分享者比较常用的有两款：逍遥游和雷电；这两款都比较稳定，也比较适合我的使用习惯。今天给大家分享一下其中一款，雷电模拟器的无广告纯净版，搭载Android
-                  7.1内核，启动速度快，稳定流畅兼容性好。
-                  有时候工作需要或者娱乐需要，会经常在电脑上使用安卓模拟器。目前市面上有很多款安装模拟器，像分享者比较常用的有两款：逍遥游和雷电；这两款都比较稳定，也比较适合我的使用习惯。今天给大家分享一下其中一款，雷电模拟器的无广告纯净版，搭载Android
-                  7.1内核，启动速度快，稳定流畅兼容性好。
-                  有时候工作需要或者娱乐需要，会经常在电脑上使用安卓模拟器。目前市面上有很多款安装模拟器，像分享者比较常用的有两款：逍遥游和雷电；这两款都比较稳定，也比较适合我的使用习惯。今天给大家分享一下其中一款，雷电模拟器的无广告纯净版，搭载Android
-                  7.1内核，启动速度快，稳定流畅兼容性好。
-                </div>
-              </div>
-            </div>
-            <div class="info_message" :class="index == 2 ? 'last' : ''">
-              <i class="el-icon-view"></i>243浏览 |
-              <i class="el-icon-chat-square"></i>5评论 |
-              <i class="el-icon-date"></i>2021年01月09日
-            </div>
-          </div>
-        </div>
-        <div class="new_content technical_content">
-          <div class="nav">
-            <div>最新文章</div>
-          </div>
-          <div v-for="(item, index) in 3" :key="index">
-            <div class="content">
-              <div class="img">
-                <img
-                  src="https://img.tgl.qq.com/cover/20210716/1d0812ff299e07eaaa61b9b25c75c550_1626394876.jpg"
-                  alt=""
-                />
-              </div>
-              <div class="main_contnet">
-                <div class="title">
-                  <a href="">水电费水费电费供电发生的腐蚀毒粉</a>
-                </div>
-                <div class="detail">
-                  有时候工作需要或者娱乐需要，会经常在电脑上使用安卓模拟器。目前市面上有很多款安装模拟器，像分享者比较常用的有两款：逍遥游和雷电；这两款都比较稳定，也比较适合我的使用习惯。今天给大家分享一下其中一款，雷电模拟器的无广告纯净版，搭载Android
-                  7.1内核，启动速度快，稳定流畅兼容性好。
-                </div>
-              </div>
-            </div>
-            <div class="info_message" :class="index == 2 ? 'last' : ''">
-              <i class="el-icon-view"></i>243浏览 |
-              <i class="el-icon-chat-square"></i>5评论 |
-              <i class="el-icon-date"></i>2021年01月09日
-            </div>
-          </div>
-        </div>
-        <div class="new_content soft_content">
-          <div class="nav">
-            <div>软件仓库</div>
-          </div>
-          <div v-for="(item, index) in 3" :key="index">
-            <div class="content">
-              <div class="img">
-                <img
-                  src="https://img.tgl.qq.com/cover/20210716/1d0812ff299e07eaaa61b9b25c75c550_1626394876.jpg"
-                  alt=""
-                />
-              </div>
-              <div class="main_contnet">
-                <div class="title">
-                  <a href="">水电费水费电费供电发生的腐蚀毒粉</a>
-                </div>
-                <div class="detail">
-                  有时候工作需要或者娱乐需要，会经常在电脑上使用安卓模拟器。目前市面上有很多款安装模拟器，像分享者比较常用的有两款：逍遥游和雷电；这两款都比较稳定，也比较适合我的使用习惯。今天给大家分享一下其中一款，雷电模拟器的无广告纯净版，搭载Android
-                  7.1内核，启动速度快，稳定流畅兼容性好。
-                </div>
-              </div>
-            </div>
-            <div class="info_message" :class="index == 2 ? 'last' : ''">
-              <i class="el-icon-view"></i>243浏览 |
-              <i class="el-icon-chat-square"></i>5评论 |
-              <i class="el-icon-date"></i>2021年01月09日
-            </div>
-          </div>
-        </div>
+        <Article navTitle="最新内容" :contentList="newList" />
+        <div style="height:20px" />
+        <Article navTitle="技术文章" :contentList="skillList" />
+        <div style="height:20px" />
+        <Article navTitle="软件仓库" :contentList="softList" />
       </div>
       <div class="right_content">
-        <div class="label">
-          <div class="nav"><i class="el-icon-paperclip"></i> 热门标签</div>
-          <div class="label_content">
-            <div v-for="(item, index) in labelList" :key="index">
-              {{ item }}
-            </div>
-          </div>
-        </div>
-        <div class="hot_article">
-          <div class="nav"><i class="el-icon-document"></i> 热门文章</div>
-          <div class="article_content">
-            <div
-              class="article_item"
-              v-for="(item, index) in hot_article"
-              :key="index"
-            >
-              <div
-                class="serial"
-                :class="[
-                  index == 0 ? 'serial1' : '',
-                  index == 1 ? 'serial2' : '',
-                  index == 2 ? 'serial3' : '',
-                ]"
-              >
-                {{ index + 1 }}
-              </div>
-              <span>
-                {{ item }}
-              </span>
-            </div>
-          </div>
-        </div>
-        <div class="hot_soft">
-          <div class="nav"><i class="el-icon-connection"></i> 热门软件</div>
-          <div class="soft_content">
-            <div
-              class="soft_item"
-              v-for="(item, index) in softList"
-              :key="index"
-            >
-              <div class="img">
-                <img
-                  src="https://img.tgl.qq.com/cover/20210714/d7d2983f3e14b574a4bf28bc309b52ef_1626264996.jpg"
-                  alt=""
-                />
-              </div>
-              <div class="soft_item_content">
-                <div class="title">
-                  {{ item.title }}
-                </div>
-                <div class="content">
-                  {{ item.content }}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Label :contentList="labelList" />
+        <HotArticle :contentList="hot_article" />
+        <HotSoft :contentList="softList" />
       </div>
     </div>
-    <footer>
-      <p class="foot_nav">
-        <a href="">关于我们</a>|<a href="/" rel="nofollow">订阅本站</a> |
-        <a href="" rel="nofollow">联系站长</a>
-        |<a href="" target="_blank">网址地图</a>|<a href="">友情链接</a>
-      </p>
-      <p>
-        Copyright © 2019-2021
-        <a href="">KR博客</a>
-        版权所有 | 托管于
-        <a href="" target="_blank"><img src="" />阿里云服务器 </a>
-      </p>
-      <p>
-        <span id="cnzz_stat_icon_1278873985"></span>
-      </p>
-      <p>
-        <a href="" target="_blank"><img src="" />来自KR的博客</a>
-      </p>
-    </footer>
+    <Footer />
   </div>
 </template>
 
 <script>
-import NavBar from "@/components/navBar"
+import { WOW } from "wowjs";
+import NavBar from "@/components/navBar";
+import Article from "@/components/Article";
+import Label from "@/components/Label.vue";
+import HotArticle from "@/components/HotArticle.vue";
+import HotSoft from "@/components/HotSoft.vue";
+import Footer from "@/components/Footer.vue";
+import PersonCard from "@/components/PersonCard.vue";
 export default {
   components: {
-    NavBar
+    NavBar,
+    Article,
+    Label,
+    HotArticle,
+    HotSoft,
+    Footer,
+    PersonCard,
   },
   data() {
     return {
@@ -314,27 +137,81 @@ export default {
       ],
       softList: [
         {
-          title: "阿萨德速度防辐射的",
+          title: "QQ",
           content:
             "收到非官方的空间冬季风光肯定是军阀割据的是镂空发光角度来看离开对方感觉了可见多发公斤离开对方进攻",
         },
         {
-          title: "阿萨德速度防辐射的",
+          title: "WX",
           content:
             "收到非官方的空间冬季风光肯定是军阀割据的是镂空发光角度来看离开对方感觉了可见多发公斤离开对方进攻",
         },
         {
-          title: "阿萨德速度防辐射的",
+          title: "支付宝",
           content:
             "收到非官方的空间冬季风光肯定是军阀割据的是镂空发光角度来看离开对方感觉了可见多发公斤离开对方进攻",
         },
         {
-          title: "阿萨德速度防辐射的",
+          title: "美团",
           content:
             "收到非官方的空间冬季风光肯定是军阀割据的是镂空发光角度来看离开对方感觉了可见多发公斤离开对方进攻",
         },
         {
-          title: "阿萨德速度防辐射的",
+          title: "饿了么",
+          content:
+            "收到非官方的空间冬季风光肯定是军阀割据的是镂空发光角度来看离开对方感觉了可见多发公斤离开对方进攻",
+        },
+      ],
+      skillList: [
+        {
+          title: "NBA2K21",
+          content:
+            "收到非官方的空间冬季风光肯定是军阀割据的是镂空发光角度来看离开对方感觉了可见多发公斤离开对方进攻收到非官方的空间冬季风光肯定是军阀割据的是镂空发光角度来看离开对方感觉了可见多发公斤离开对方进攻",
+        },
+        {
+          title: "NBA2K21",
+          content:
+            "收到非官方的空间冬季风光肯定是军阀割据的是镂空空发光角度来看离开对方感觉了可见多发公斤离开对方进攻收到非官方的空间冬季风光肯定是军阀割据的是镂空发光角度来看离开对方感觉了可见多发公斤离开对方进攻",
+        },
+        {
+          title: "NBA2K21",
+          content:
+            "收到非官方的空间冬季风光肯定是军阀割据空发光角度来看离开对方感觉了可见多发公斤离开对方进攻收到非官方的空间冬季风光肯定是军阀割据的是镂空的是镂空发光角度来看离开对方感觉了可见多发公斤离开对方进攻",
+        },
+        {
+          title: "NBA2K21",
+          content:
+            "收到非官方的空间冬季风光肯定是军阀割据的是镂空发光角度来看离开对方感觉了可见多发公斤离开对方进攻",
+        },
+        {
+          title: "NBA2K21",
+          content:
+            "收到非官方的空间冬季风光肯定是军阀割据的是镂空发光角度来看离开对方感觉了可见多发公斤离开对方进攻",
+        },
+      ],
+      newList: [
+        {
+          title: "雷神模拟器",
+          content:
+            "收到非官方的空间冬季风光肯定是军阀割据的是镂空发光角度来看离开对方感觉了可见多发公斤离开对方进攻",
+        },
+        {
+          title: "雷神模拟器",
+          content:
+            "收到非官方的空间冬季风光肯定是军阀割据的是镂空发光角度来看离开对方感觉了可见多发公斤离开对方进攻",
+        },
+        {
+          title: "雷神模拟器",
+          content:
+            "收到非官方的空间冬季风光肯定是军阀割据的是镂空发光角度来看离开对方感觉了可见多发公斤离开对方进攻",
+        },
+        {
+          title: "雷神模拟器",
+          content:
+            "收到非官方的空间冬季风光肯定是军阀割据的是镂空发光角度来看离开对方感觉了可见多发公斤离开对方进攻",
+        },
+        {
+          title: "雷神模拟器",
           content:
             "收到非官方的空间冬季风光肯定是军阀割据的是镂空发光角度来看离开对方感觉了可见多发公斤离开对方进攻",
         },
@@ -392,11 +269,6 @@ export default {
         clearTimeout(c);
       }
     },
-    toMy() {
-      this.$router.push({
-        path:"/my"
-      })
-    }
   },
 };
 </script>
@@ -554,11 +426,10 @@ export default {
     }
     .center {
       flex: 1;
-      // width: 500px;
       height: 450px;
-      // background-color: rgb(65, 48, 48);
       border-radius: 10px;
       overflow: hidden;
+      margin-right: 10px;
       img {
         width: 100%;
         height: 450px;
@@ -579,143 +450,6 @@ export default {
         background-color: #d3dce6;
       }
     }
-    .right {
-      background-color: #fff;
-      overflow: hidden;
-      border-radius: 10px;
-      margin-left: 10px;
-      width: 300px;
-      height: 450px;
-      .top-img {
-        height: 165px;
-        img {
-          width: 100%;
-          height: 100%;
-        }
-      }
-      .center-content {
-        padding: 20px 20px 10px 20px;
-        // background-color: teal
-        position: relative;
-        // background-color: steelblue;
-        .hearder {
-          position: absolute;
-          top: -50px;
-          left: 110px;
-          border-radius: 50%;
-          width: 80px;
-          height: 80px;
-          // background-color: steelblue;
-          &:hover img {
-            transform: scale(1.2);
-          }
-
-          overflow: hidden;
-
-          img {
-            transition: all 0.5s;
-            border-radius: 50%;
-            width: 80px;
-            height: 80px;
-          }
-        }
-        h2 {
-          padding-top: 20px;
-          text-align: center;
-        }
-        .detail {
-          margin-top: 10px;
-          font-size: 14px;
-          color: #444444;
-          line-height: 20px;
-        }
-        .add-friend {
-          padding: 25px;
-          width: 220px;
-          margin: 0 auto;
-          display: flex;
-          justify-content: space-evenly;
-          .iconB {
-            // border-radius: 10px;
-            width: 42px;
-            height: 42px;
-          }
-          .wx {
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
-            background-color: teal;
-            cursor: pointer;
-            .erweima {
-              width: 100px;
-              height: 100px;
-              // background-color: rgb(96, 151, 202);
-              border-radius: 10px;
-              position: relative;
-              bottom: 145px;
-              right: 30px;
-              display: none;
-              img {
-                border-radius: 10px;
-                width: 100px;
-                height: 95px;
-              }
-            }
-          }
-          .wx:hover .erweima {
-            display: block;
-          }
-          .qq:hover .erweima {
-            display: block;
-          }
-          .qq {
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
-            background-color: teal;
-            cursor: pointer;
-            .erweima {
-              width: 100px;
-              height: 100px;
-              // background-color: rgb(96, 151, 202);
-              border-radius: 10px;
-              position: relative;
-              bottom: 145px;
-              right: 30px;
-              display: none;
-              img {
-                border-radius: 10px;
-                width: 100px;
-                height: 95px;
-              }
-            }
-          }
-        }
-      }
-      .message-content {
-        // background-color: rgb(240, 151, 151);
-        width: 100%;
-        height: 65px;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        text-align: center;
-        border-top: 0.1px solid #d6d6d6;
-        > div {
-          border-right: 0.1px solid #d6d6d6;
-          width: 100%;
-        }
-        .run {
-          border-right: none;
-          // margin-top: 15px;
-        }
-        .num {
-          font-size: 16px;
-          color: rgb(173, 165, 165);
-          margin-bottom: 5px;
-        }
-      }
-    }
   }
   .bottom_content {
     animation: start 1s;
@@ -730,103 +464,7 @@ export default {
       height: 100%;
       // background-color: rgba(0, 0, 0, 0.64);
       flex: 1;
-      .new_content {
-        padding: 0px 20px 0px 20px;
-        border-radius: 10px;
-        height: 100%;
-        width: 100%;
-        background-color: #fff;
-        // margin-top: 15px;
-        .nav {
-          height: 60px;
-          width: 100%;
-          // background-color: forestgreen;
-          border-bottom: 1px solid rgb(231, 229, 227);
-          > div {
-            font-size: 20px;
-            font-weight: 600;
-            color: #000;
-            width: 85px;
-            height: 62px;
-            line-height: 60px;
-            border-bottom: 6px solid #0eadf7;
-          }
-        }
-        .content {
-          display: flex;
-          margin-top: 20px;
-          .img {
-            width: 180px;
-            height: 120px;
-            background-color: #0eadf7;
-            overflow: hidden;
-            border-radius: 5px;
-            img {
-              border-radius: 5px;
-              width: 100%;
-              height: 100%;
-              transition: all 0.2s;
-              &:hover {
-                transform: scale(1.1);
-              }
-            }
-          }
-          .main_contnet {
-            // background-color: #0eadf7;
-            flex: 1;
-            padding-left: 10px;
-            width: 1000px;
-            .title {
-              font-size: 20px;
-              font-weight: 600;
-              width: 100%;
-              color: #555555;
-              text-overflow: ellipsis;
-              overflow: hidden;
-              white-space: nowrap;
-              // display: -webkit-box;
-              // -webkit-box-orient: vertical;
-              // -webkit-line-clamp: 1;
-              a {
-                color: #555555;
-                text-decoration: none;
-              }
-              a:hover {
-                color: #0eadf7;
-                text-decoration: underline;
-              }
-            }
-            .detail {
-              margin-top: 5px;
-              color: #666;
-              display: block;
-              font-size: 15px;
-              width: 100%;
-              line-height: 23px;
-              max-height: 88px;
-              text-overflow: ellipsis;
-              overflow: hidden;
-              display: -webkit-box;
-              -webkit-box-orient: vertical;
-              -webkit-line-clamp: 4;
-            }
-          }
-        }
-        .info_message {
-          color: #666;
-          padding: 10px 0px 10px 0px;
-          width: 100%;
-          display: flex;
-          justify-content: flex-end;
-          border-bottom: 1px dashed #cccccc;
-          i {
-            margin: 3px 5px 0px 7px;
-          }
-        }
-        .last {
-          border-bottom: none;
-        }
-      }
+
       .technical_content {
         margin-top: 20px;
       }
@@ -840,220 +478,7 @@ export default {
       // background-color: #fff;
       height: 100%;
       margin-left: 10px;
-      .label {
-        border-radius: 10px;
-        width: 100%;
-        height: 100%;
-        background-color: #fff;
-        overflow: hidden;
-        padding: 0px 20px 20px 20px;
-        .nav {
-          width: 100%;
-          height: 35px;
-          line-height: 50px;
-          font-size: 20px;
-          font-weight: 600;
-          // background-color: firebrick;
-        }
-        .label_content {
-          display: flex;
-          flex-wrap: wrap;
-          // background-color: firebrick;
-          width: 100%;
-          > div {
-            color: #666;
-            font-size: 12px;
-            padding: 1px 15px 1px 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 6px;
-            border: 1px solid rgb(192, 186, 186);
-            margin: 20px 10px 0px 0px;
-            cursor: pointer;
-            &:hover {
-              color: #0eadf7;
-              border: 1px solid #0eadf7;
-            }
-          }
-        }
-      }
-      .hot_article {
-        border-radius: 10px;
-        width: 100%;
-        height: 100%;
-        background-color: #fff;
-        overflow: hidden;
-        padding: 0px 20px 20px 20px;
-        margin-top: 20px;
-        .nav {
-          height: 45px;
-          line-height: 50px;
-          font-size: 20px;
-          font-weight: 600;
-        }
-        .article_content {
-          .article_item:hover {
-            color: #0eadf7;
-            // background-color: forestgreen;
-            margin-left: 15px;
-            background-color: rgb(237, 242, 245);
-          }
-          .article_item {
-            transition: all 0.5s;
-            display: flex;
-            align-items: center;
-            width: 100%;
-            margin-top: 2px;
-            padding: 8px 0px 8px 2px;
-            border-bottom: 1px dashed #cccccc;
-            cursor: pointer;
-            // color: red !important;
-            color: #555555;
-            .serial {
-              color: #fff;
-              font-size: 14px;
-              width: 20px;
-              height: 20px;
-              background-color: gray;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-            }
-            .serial1 {
-              background-color: red;
-            }
-            .serial2 {
-              background-color: rgb(248, 127, 15);
-            }
-            .serial3 {
-              background-color: rgb(14, 161, 247);
-            }
-            span {
-              width: 100%;
-              text-overflow: ellipsis;
-              overflow: hidden;
-              white-space: nowrap;
-              margin-left: 7px;
-            }
-          }
-        }
-      }
-      .hot_soft {
-        margin-top: 20px;
-        border-radius: 10px;
-        width: 100%;
-        height: 100%;
-        background-color: #fff;
-        overflow: hidden;
-        padding: 0px 20px 20px 20px;
-        .nav {
-          width: 100%;
-          height: 35px;
-          line-height: 50px;
-          font-size: 20px;
-          font-weight: 600;
-          // background-color: firebrick;
-        }
-        .soft_content {
-          margin-top: 10px;
-
-          .soft_item {
-            display: flex;
-            width: 100%;
-            margin-top: 2px;
-            padding: 8px 0px 8px 2px;
-            border-bottom: 1px dashed #cccccc;
-            cursor: pointer;
-            color: #555555;
-            transition: all 0.3s;
-            &:hover {
-              border: 4px dashed #a5cddd;
-              transform: scale(1.05);
-            }
-            .img {
-              margin-top: 2px;
-              img {
-                width: 88px;
-                height: 65px;
-                background-color: rgb(110, 114, 104);
-              }
-            }
-            .soft_item_content {
-              margin-left: 7px;
-              width: 100%;
-              height: 100%;
-              .title {
-                width: 170px;
-                text-overflow: ellipsis;
-                overflow: hidden;
-                white-space: nowrap;
-                color: #000;
-                font-weight: 600;
-                font-size: 15px;
-              }
-              .content {
-                font-size: 12px;
-                color: #555555;
-                height: 100%;
-                text-overflow: ellipsis;
-                overflow: hidden;
-                display: -webkit-box;
-                -webkit-box-orient: vertical;
-                -webkit-line-clamp: 3;
-              }
-            }
-          }
-        }
-      }
     }
-  }
-  /*标签*/
-  footer {
-    width: 100%;
-    min-width: 250px;
-    line-height: 30px;
-    padding: 10px 0;
-    color: #000;
-    margin: 20px 0px auto;
-    font-size: 12px;
-    text-align: center;
-    background: #fff;
-    transition: all 0.5s;
-  }
-  footer .foot_nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  footer .foot_nav a {
-    font-weight: bold;
-    font-size: 13px;
-    padding: 0 7px;
-  }
-  footer a:nth-child(1) img {
-    position: relative;
-    bottom: -5px;
-    margin-right: 3px;
-  }
-  footer a:nth-child(2) img {
-    position: relative;
-    bottom: -1px;
-    margin-right: 3px;
-  }
-  footer a:nth-child(3) img {
-    height: 16px;
-    position: relative;
-    bottom: -2px;
-    margin-right: 3px;
-  }
-  footer a {
-    color: #555555;
-    text-decoration: none;
-  }
-  footer a:hover {
-    text-decoration: underline;
-    color: #4586e7;
   }
 }
 </style>

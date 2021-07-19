@@ -4,6 +4,9 @@ import router from './router'
 import store from './store'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import 'wowjs/css/libs/animate.css' 
+import { WOW } from 'wowjs';
+new WOW({ live: false }).init();
 Vue.use(ElementUI)
 Vue.config.productionTip = false
 

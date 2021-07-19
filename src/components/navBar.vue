@@ -12,7 +12,7 @@
           <a href="/home" target="_self">
             <div><i class="el-icon-s-home"> 主页</i></div></a
           >
-          <a href="">
+          <a href="/skillarticle">
             <div><i class="el-icon-reading"> 技术文章</i></div></a
           >
 

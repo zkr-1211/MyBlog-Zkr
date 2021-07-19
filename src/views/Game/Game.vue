@@ -1,7 +1,7 @@
 <!--  -->
 <template>
   <div class='body'>
-      <iframe src="./chouJiang/index.html" style="width: 100%;height: 100vh;" frameborder="0"></iframe>
+      <!-- <iframe src="./chouJiang/index.html" style="width: 100%;height: 100vh;" frameborder="0"></iframe> -->
   </div>
 </template>
 
