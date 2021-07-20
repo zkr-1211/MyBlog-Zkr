@@ -4,10 +4,10 @@ import Home from '../views/Home.vue'
 import My from '../views/My/My.vue'
 import Loading from '../views/Loading/Loading.vue'
 import Lavoratory from '../views/Lavoratory/Lavoratory.vue'
-import Game from '../views/Game/Game.vue'
-import Movie from '../views/Movie/Movie.vue'
-import Planet from '../views/Planet/Planet.vue'
 import SkillArticle from '../views/SkillArticle/SkillArticle.vue'
+import SoftArticle from '../views/SoftArticle/SoftArticle.vue'
+import Internet from '../views/Internet/Internet.vue'
+import CodeShare from '../views/CodeShare/CodeShare.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -31,27 +31,26 @@ const routes = [
     name: 'Lavoratory',
     component: Lavoratory
   },
-  // {
-  //   path: '/game',
-  //   name: 'Game',
-  //   component: Game
-  // },
-  // {
-  //   path: '/movie',
-  //   name: 'Movie',
-  //   component: Movie
-  // },
-  // {
-  //   path: '/planet',
-  //   name: 'Planet',
-  //   component: Planet
-  // },
   {
     path: '/skillarticle',
     name: 'SkillArticle',
     component: SkillArticle
   },
-
+  {
+    path: '/codeshare',
+    name: 'CodeShare',
+    component: CodeShare
+  },
+  {
+    path: '/softarticle',
+    name: 'SoftArticle',
+    component: SoftArticle
+  },
+  {
+    path: '/internet',
+    name: 'Internet',
+    component: Internet
+  },
   // {
   //   path: '/about',
   //   name: 'About',

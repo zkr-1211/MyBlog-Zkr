@@ -7,7 +7,7 @@
       </div>
       <div class="center-content">
         <div class="hearder" >
-            <a href="/my"><img src="https://img.tgl.qq.com/cover/20210716/1d0812ff299e07eaaa61b9b25c75c550_1626394876.jpg" alt="" /></a>   
+            <a href="/my" target="_blank"><img src="https://img.tgl.qq.com/cover/20210716/1d0812ff299e07eaaa61b9b25c75c550_1626394876.jpg" alt="" /></a>   
         </div>
         <div>
           <h2>KR博客</h2>

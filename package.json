@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "format": "prettier --write \"**/*.(js|ts|jsx|tsx|vue|css|scss)\""
   },
   "dependencies": {
     "core-js": "^3.6.5",

@@ -1,14 +1,13 @@
 <!--  -->
 <template>
   <div class="body">
-    <NavBar />
     <div class="card">
       <div>
         <div class="section">
           <i class="message fas fa-envelope"></i>
           <i class="notif fas fa-bell"></i>
           <div class="pic">
-            <img src="../../assets/my_background.jpg" alt="图片加载错误！" />
+            <img src="../../assets/myPerson1.jpg" alt="图片加载错误！" />
           </div>
           <div class="name">KR的博客</div>
           <div class="tag">1290267206@qq.com</div>
@@ -68,7 +67,7 @@ export default {
 
 .body {
   font-family: sans-serif;
-  background: url(../../assets/my_background.jpg);
+  background: url(../../assets/myPerson1.jpg);
   background-size: cover;
   display: flex;
   align-items: center;
@@ -87,7 +86,7 @@ export default {
 
 .section {
   padding: 60px 40px;
-  background: #74b9ffaa;
+  background: #7500fc54;
 }
 
 .message,
@@ -113,7 +112,7 @@ export default {
   height: 150px;
   margin: auto auto 20px auto;
   padding: 4px;
-  border: 2px solid #6a89cc;
+  border: 2px solid #9985e0;
   border-radius: 50%;
 }
 
@@ -128,7 +127,7 @@ export default {
   width: 100%;
   height: 100%;
   position: absolute;
-  border: 1px solid #3c6382;
+  border: 1px solid #9985e0;
   left: 0;
   top: 0;
   box-sizing: border-box;
@@ -152,7 +151,7 @@ export default {
 
 .tag {
   font-size: 18px;
-  color: #222;
+  color:  #f1f1f1;
 }
 
 .bottom-section {
@@ -190,7 +189,7 @@ export default {
   position: relative;
   width: 60px;
   height: 60px;
-  background: #2980b9;
+  background: #9985e0;
   border-radius: 50%;
   color: #f1f1f1;
   font-size: 24px;
@@ -203,7 +202,7 @@ export default {
   width: 100%;
   height: 100%;
   position: absolute;
-  border: 1px solid #e74c3c;
+  border: 1px solid #9985e0;
   left: 0;
   top: 0;
   box-sizing: border-box;

@@ -2,14 +2,16 @@
 <template>
   <div class='body'>
     <NavBar />
-    <div class="topBackground">
+    <div class="topMain">
       <div class="text">
-        <h2>技术文章</h2>
+        <h2>软件文章</h2>
         <p>
-          转载或投稿优秀的技术文章</p>
+          选择自己喜欢的软件进行分享...</p>
+      </div>
+      <div class="topBackground">
+        <img src="../../assets/Article.jpg" alt="">
       </div>
 
-      <img src="../../assets/banner.jpg" alt="">
     </div>
     <div class="bottom_content">
       <div class="left_content">
@@ -170,34 +172,39 @@ export default {
 };
 </script>
 <style lang='scss' scoped>
+.topMain{
+    position: relative;
+  .text {
+    z-index: 999;
+    position: absolute;
+    color: #fff;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    h2 {
+      text-align: center;
+    }
+    P {
+      margin-top: 10px;
+    }
+  }
 .topBackground {
   margin-top: 80px;
   height: 300px;
   width: 100%;
   overflow: hidden;
   position: relative;
-  .text {
-    z-index: 999;
-    position: absolute;
-    color: #FFF;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    h2 {
-      text-align: center;
-    }
-    P{
-      margin-top: 10px;
-    }
-  }
-
+  background-color: rgba(0,0,0,1);
   img {
     object-fit: cover;
     height: 300px;
     width: 100%;
+    opacity: 0.6;
   }
   //   background-color: rgb(195, 250, 92);
 }
+}
+
 .bottom_content {
   animation: start 1s;
   letter-spacing: 1px;

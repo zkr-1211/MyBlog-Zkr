@@ -1,32 +1,8 @@
 <!--  -->
 <template>
+
   <div class="body">
-    <!-- <section class="container">
-    <ul>
-        <li class="wow bounceInLeft">啊啊啊</li>
-        <li class="wow bounceInRight"></li>
-        <li class="wow bounceIn"></li>
-        <li class="wow bounceInUp"></li>
-        <li class="wow bounceInDown"></li>
-        <li class="wow slideInUp"></li>
-        <li class="wow slideInDown"></li>
-        <li class="wow slideInLeft"></li>
-        <li class="wow slideInRight"></li>
-        <li class="wow lightSpeedIn"></li>
-        <li class="wow pulse"></li>
-        <li class="wow flipInX">哦哦哦</li>
-        <li class="wow flipInY"></li>
-        <li class="wow bounce"></li>
-        <li class="wow shake"></li>
-        <li class="wow wobble"></li>
-        <li class="wow rollIn"></li>
-        <li class="wow fadeInUpBig" data-wow-delay="0.3s"></li>
-        <li class="wow fadeInUpBig" data-wow-delay="0.6s">呃呃呃</li>
-        <li class="wow fadeInUpBig" data-wow-delay="0.9s"></li>
-        <li class="wow fadeInUpBig" data-wow-delay="1.2s"></li>
-        <li class="wow fadeInUpBig" data-wow-delay="1.5s"></li>
-    </ul>
-</section> -->
+  <iframe src="./beijing/index.html" style="width: 100%;height: 100vh;" frameborder="0"> </iframe>
     <div class="isTop" v-show="isTop" @click="backTop(step)">
       <i class="el-icon-top"></i>
     </div>
@@ -72,8 +48,11 @@
         <HotArticle :contentList="hot_article" />
         <HotSoft :contentList="softList" />
       </div>
+      
     </div>
+
     <Footer />
+  
   </div>
 </template>
 
@@ -285,10 +264,7 @@ export default {
 }
 
 .body {
-  // transform: scale(1.5);
-  // transition: all 2s;
-  width: 100%;
-  height: 100%;
+ 
   .isTop {
     z-index: 99;
     cursor: pointer;
@@ -310,7 +286,7 @@ export default {
   }
   .main_center {
     animation: start 1s;
-    margin: 100px auto 20px;
+    margin: 0px auto 20px;
     display: flex;
     width: 1700px;
     justify-content: space-around;

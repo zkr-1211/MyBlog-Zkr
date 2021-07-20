@@ -40,6 +40,7 @@ export default {
 /*标签*/
 footer {
   background-color: rgba(255,255,255,0.5);
+    // background-color: #fff;
   width: 100%;
   min-width: 250px;
   line-height: 30px;

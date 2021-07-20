@@ -10,31 +10,39 @@
         </div>
         <div class="navBar-title">
           <a href="/home" target="_self">
-            <div><i class="el-icon-s-home"> 主页</i></div></a
-          >
+            <div><i class="el-icon-s-home"> 主页</i></div>
+          </a>
           <a href="/skillarticle">
-            <div><i class="el-icon-reading"> 技术文章</i></div></a
-          >
-
-          <div class="classify">
-            <i class="el-icon-reading"> 栏目分类</i>
-            
-            <div class="menu">
-              <div>资源分享</div>
-              <div>资源分享</div>
-              <div>资源分享</div>
+            <div><i class="el-icon-reading"> 技术文章</i></div>
+          </a>
+          <el-dropdown>
+            <div class="el-dropdown-link" style="width:125px;">
+              <i class="el-icon-reading"></i>栏目分类<i class="el-icon-arrow-down el-icon--right"></i>
             </div>
-          </div>
+            <el-dropdown-menu class="el-dropdown-menu" slot="dropdown">
+
+              <a href="/softarticle">
+                <el-dropdown-item>软件文章</el-dropdown-item>
+              </a>
+              <a href="/codeshare">
+                <el-dropdown-item divided>源码分享</el-dropdown-item>
+              </a>
+              <a href="/internet">
+                <el-dropdown-item class="el-dropdown-item"  divided>互联网</el-dropdown-item>
+              </a>
+
+            </el-dropdown-menu>
+          </el-dropdown>
 
           <a href="/lavoratory" target="_self">
-            <div><i class="el-icon-cpu"> 实验室</i></div></a
-          >
-          <a href="" target="_self"
-            ><div><i class="el-icon-chat-round"> 给我留言</i></div></a
-          >
+            <div><i class="el-icon-cpu"> 实验室</i></div>
+          </a>
           <a href="" target="_self">
-            <div><i class="el-icon-info"> 关于</i></div></a
-          >
+            <div><i class="el-icon-chat-round"> 给我留言</i></div>
+          </a>
+          <a href="" target="_self">
+            <div><i class="el-icon-info"> 关于</i></div>
+          </a>
         </div>
       </div>
     </nav>
@@ -55,6 +63,17 @@ export default {
 };
 </script>
 <style lang='scss' scoped>
+.el-dropdown-link {
+  text-align: center;
+}
+.el-dropdown-menu{
+  a{
+    text-decoration: none;
+  }
+  .el-dropdown-item{
+    text-align: center;
+  }
+}
 nav {
   background-color: rgba(255, 255, 255, 1);
   // opacity: 0.6;
